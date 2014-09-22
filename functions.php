@@ -10,7 +10,7 @@ function create_posttype() {
   register_post_type( 'acme_product',
     array(
       'labels' => array(
-        'name' => __( 'Project' ),
+        'name' => __( 'Projects' ),
         'singular_name' => __( 'Project' )
       ),
       'public' => true,
@@ -18,13 +18,13 @@ function create_posttype() {
       'rewrite' => array('slug' => 'portfolio'),
       'taxonomies' => array('category'),
       'supports'  =>
-	            array( 
-	            	'title',
-	                'comments', 
-	                'editor',
-	                'thumbnail', 
-	                'custom-fields', 
-	                'revisions'),
+            array( 
+            	'title',
+                'comments', 
+                'editor',
+                'thumbnail', 
+                'custom-fields', 
+                'revisions'),
     )
   );
 }
@@ -42,9 +42,47 @@ function remove_admin_menu_items() {
 		if(in_array($item[0] != NULL?$item[0]:"" , $remove_menu_items)){
 		unset($menu[key($menu)]);}
 	}
+
+	$remove_menu_items = array(__('Posts'));
+	global $menu;
+	end ($menu);
+	while (prev($menu)){
+		$item = explode(' ',$menu[key($menu)][0]);
+		if(in_array($item[0] != NULL?$item[0]:"" , $remove_menu_items)){
+		unset($menu[key($menu)]);}
+	}
+
+	$remove_menu_items = array(__('Tools'));
+	global $menu;
+	end ($menu);
+	while (prev($menu)){
+		$item = explode(' ',$menu[key($menu)][0]);
+		if(in_array($item[0] != NULL?$item[0]:"" , $remove_menu_items)){
+		unset($menu[key($menu)]);}
+	}
+
+	$remove_menu_items = array(__('Profile'));
+	global $menu;
+	end ($menu);
+	while (prev($menu)){
+		$item = explode(' ',$menu[key($menu)][0]);
+		if(in_array($item[0] != NULL?$item[0]:"" , $remove_menu_items)){
+		unset($menu[key($menu)]);}
+	}
+
+	$remove_menu_items = array(__('Dashboard'));
+	global $menu;
+	end ($menu);
+	while (prev($menu)){
+		$item = explode(' ',$menu[key($menu)][0]);
+		if(in_array($item[0] != NULL?$item[0]:"" , $remove_menu_items)){
+		unset($menu[key($menu)]);}
+	}
 }
 
 add_action('admin_menu', 'remove_admin_menu_items');
+
+
 
 
 
