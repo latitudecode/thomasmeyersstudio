@@ -4,4 +4,26 @@ add_theme_support( 'post-thumbnails' );
 
 wp_insert_term( $term, $taxonomy, $args = array() );
 
+
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+  register_post_type( 'acme_product',
+    array(
+      'labels' => array(
+        'name' => __( 'Products' ),
+        'singular_name' => __( 'Product' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+    )
+  );
+}
+
+
+ /* ................. CUSTOM POST TYPES .................... */
+/* Below is an include to a default custom post type.*/
+include(TEMPLATEPATH . 'library/post_types.php');
+
+
+
 ?>
