@@ -20,10 +20,6 @@ function create_post_type() {
 }
 
 
- /* ................. CUSTOM POST TYPES .................... */
-/* Below is an include to a default custom post type.*/
-include(TEMPLATEPATH . 'library/post_types.php');
-
 
 
 ?>
