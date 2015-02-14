@@ -67,7 +67,7 @@
 		</div>
 		<nav class="primary-nav">
 			<ul class="nav-links fr">
-				<li><a href="#">work</a></li>
+				<li><a href="#"><?php wp_nav_menu( $args ); ?> </a></li>
 				<li><a href="#">studio</a></li>
 				<li><a href="#">explore</a></li>
 				<li><a href="#">info</a></li>
