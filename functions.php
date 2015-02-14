@@ -43,7 +43,16 @@ function create_post_type() {
             ),
             'public' => true,
             'has_archive' => true,
-            'rewrite' => array('slug' => 'products'),
+            'rewrite' => array('slug' => 'project'),
+      		'taxonomies' => array('category'),
+      		'supports'  =>
+            	array( 
+            		'title',
+                	'comments', 
+                	'editor',
+                	'thumbnail', 
+                	'custom-fields', 
+                	'revisions'),            
         )
     );
 }
