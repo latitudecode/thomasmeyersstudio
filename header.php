@@ -1,12 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
-
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
 <!-- This is a website for Thomas Meyers -->
 <!-- core css -->
-<link rel="stylesheet" type="text/css" href="style.css" />
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/style.css" />
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/bootstrap-responsive.css" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/normalize.css" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/custom.css" />
@@ -28,7 +25,159 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/hover.css" />	
 <!-- form css -->
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/forms.css" />	
-
-
 <?php wp_head(); ?>
 </head>
+<body>
+<div class="off-canvas-wrap" data-offcanvas> <!-- start flyout navigation -->
+  <div class="inner-wrap"> <!-- start flyout navigation content -->
+	<!-- end of the heading with most of the source files -->
+	<!-- start contact information pushd down goes here -->
+
+	<section class="pushdown">
+		<div class="push-content">
+			<ul class="contact">
+				<li class="title">contact</li>
+				<li>thomas meyers</li>
+				<li>phone: 603.525.3528</li>
+				<li>email: tom@thomasmeyersstudio.com</li>
+			</ul>
+			<div class="push-exit"><i class="#"></i></div>	
+		</div>		
+	</section>
+
+	<!-- end of pushdown contact -->
+	<!-- start the header and navigation -->
+
+	<header>
+		
+		<div class="flyout">
+			 <a class="left-off-canvas-toggle" href="#" ><i class="fa fa-bars"></i></a> <!-- flyout menu icon -->
+		</div>
+
+		<div class="mail fr">
+			<a href="#"><i class="fa fa-envelope"></i></a>
+		</div>
+		
+		<!-- start to main navigation and logo -->
+		<div class="logo fl">
+			<ul>
+				<li><a href="#"><img width="60" src="<?php bloginfo('template_directory'); ?>/images/logo.png" /></a></li>
+				<li class="logo-text">thomas meyers studio</li>
+			</ul>
+		</div>
+		<nav class="primary-nav">
+			<ul class="nav-links fr">
+				<li><a href="#">work</a></li>
+				<li><a href="#">studio</a></li>
+				<li><a href="#">explore</a></li>
+				<li><a href="#">info</a></li>
+				<li class="pushup"><a href="#">contact</a></li>												
+			</ul>
+		</nav>
+		<!-- end to main navigation and logo -->
+	</header>
+
+	<!-- end of the header and navigation -->
+	<!-- begin flyout menu -->
+
+	<div class="flyout"> <!-- start main flyout menu content -->
+	    <!-- Off Canvas Menu -->
+	    <aside class="left-off-canvas-menu">
+	    	  <a class="exit-off-canvas"><i class="fa fa-times"></i></a>
+	        <!-- whatever you want goes here -->
+	        <ul>
+				<li><a href="#">work</a></li>
+				<li><a href="#">studio</a></li>
+				<li><a href="#">explore</a></li>
+				<li><a href="#">info</a></li>
+				<li><a href="#">contact</a></li>												
+			</ul>
+	    </aside>
+	</div> <!-- end main flyout menu content -->
+  <!-- close the off-canvas menu -->
+
+
+	<!--- start to the slider -->
+
+	<section class="slider">
+		<div class="home-slider"> <!-- pull in royal slider content/images -->
+			<ul class="slider-buttons">
+				<li><i class="#"></i></li> 
+				<li><i class="#"></i></li>
+				<li><i class="#"></i></li>								
+			</ul>
+			<div class="slide">
+				<img src="<?php bloginfo('template_directory'); ?>/images/slide1.png" /> <!-- slider image -->
+			</div>
+			<div class="slide">
+				<!-- <img src="#" /> <!-- slider image -->
+			</div>
+			<div class="slide">
+				<!-- <img src="#" /> <!-- slider image -->
+			</div>			
+		</div>
+	</section>
+
+	<!-- end of the slider section -->
+	<!-- start the medium seleciton with secondary nav -->
+	
+	<section class="cat-section row-effect">
+		<div class="media-entry-mosaic fl"> <!-- nav for selecting medium type -->
+			 <ul>
+				<li class="title"><h2>mosaic</h2></li>
+				<li class="cat-img">
+					<a href="#">	
+						<figure class="effect-hover cat"> 
+							<img src="<?php bloginfo('template_directory'); ?>/images/mosaic.png" />
+								<figcaption>
+									<p></p>
+								</figcaption>			
+						</figure> 
+					</a>					
+				</li>
+			</ul>
+		</div> <!-- end nav for selecting type -->
+		
+		<div class="media-entry-collage fr"> <!-- nav for selecting medium type -->
+			 <ul>
+				<li class="title"><h2>collage</h2></li>
+				<li class="cat-img">						
+					<a href="#">	
+						<figure class="effect-hover cat"> 
+							<img src="<?php bloginfo('template_directory'); ?>/images/mosaic.png" />
+								<figcaption>
+									<p></p>
+								</figcaption>			
+						</figure> 
+					</a>
+				</li>
+			</ul>
+		</div> <!-- end nav for selecting type -->
+	</section>
+	<div class="clear"></div>
+
+	<!-- end medium selection section -->
+	<!-- start the footer -->
+
+
+
+	<footer>
+		<div class="signup-man fl">
+			<input class="signup-field" type="email" required="" placeholder="Email address" id="mce-EMAIL" name="EMAIL" value="">
+				<button class="signup-button" id="mc-embedded-subscribe" name="subscribe" type="submit">
+	            	<i class="#"></i>
+	            </button>
+        </div>
+		<div class="rightz fr"><h4>&copy; 2014 Thomas Meyers</h4></div>
+	</footer>
+
+</div>
+  </div>  
+</div> <!-- end flyout navigation -->
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+</body>
+</html>
