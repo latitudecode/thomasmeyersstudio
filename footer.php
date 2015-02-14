@@ -19,8 +19,8 @@
 </div>
   </div>  
 </div> <!-- end flyout navigation -->
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/foundation.min.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/js/vendor/jquery.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/js/foundation.min.js"></script>
     <script>
       $(document).foundation();
     </script>
