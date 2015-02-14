@@ -1,0 +1,59 @@
+body {
+
+}
+
+.wrap {
+	margin: 0 auto;
+	width: 1000px;
+}
+
+
+.clear {
+	clear: both;
+}
+
+ul li {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+nav a {
+	text-decoration: none;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+/* what color do you want the site? */
+
+header, .cat-section, footer, .media-selection {
+	background-color: #ffffff;
+	z-index: 9999999 !important;
+}
+
+
+/* navigation */
+
+nav ul li {
+	display: inline;
+}
+
+/* slider */
+
+.slide img {
+	max-height: 800px;
+	width: 100%;
+}
+
+.slide {
+	z-index: -1; 
+}
+
