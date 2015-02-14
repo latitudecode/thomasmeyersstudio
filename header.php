@@ -21,12 +21,14 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/foundation.css" />
 <!-- make it responsive -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- foundation script -->
+<script src="<?php bloginfo('template_directory'); ?>/js/foundation/foundation.offcanvas.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/js/foundation/foundation.js"></script>
+<!-- hover action -->
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/hover.css" />	
+<!-- form css -->
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/forms.css" />	
 
-
-
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
-
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/folder/file-name.js"></script>
 
 <?php wp_head(); ?>
 </head>
