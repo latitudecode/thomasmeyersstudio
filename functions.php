@@ -88,16 +88,13 @@ add_action('admin_menu', 'remove_admin_menu_items');
 /*-----------------------------------------------------------------------------------*/
 /* Adding menu */
 /*-----------------------------------------------------------------------------------*/
+	
 
-function register_my_menus() {
-  register_nav_menus(
-    array(  
-    	'header_navigation' => __( 'Header Navigation' ), 
-    	'expanded_footer' => __( 'Expanded Footer' )
-    )
-  );
-} 
-add_action( 'init', 'register_my_menus' );
+	// This theme uses wp_nav_menu() in two locations.
+	register_nav_menus( array(
+		'primary'   => __( 'Top primary menu', 'thomasmeyersstudio' ),
+		'secondary' => __( 'Secondary menu in left sidebar', 'thomasmeyersstudio' ),
+	) );
 
 
 

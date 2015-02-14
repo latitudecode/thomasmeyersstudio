@@ -67,11 +67,12 @@
 		</div>
 		<nav class="primary-nav">
 			<ul class="nav-links fr">
-				<li><a href="#"><?php wp_nav_menu( $args ); ?> </a></li>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+				<!-- <li><a href="#">work</a></li>
 				<li><a href="#">studio</a></li>
 				<li><a href="#">explore</a></li>
 				<li><a href="#">info</a></li>
-				<li class="pushup"><a href="#">contact</a></li>												
+				<li class="pushup"><a href="#">contact</a></li>		-->										
 			</ul>
 		</nav>
 		<!-- end to main navigation and logo -->
