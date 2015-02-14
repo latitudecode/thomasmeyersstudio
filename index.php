@@ -62,3 +62,6 @@
 
 	<!-- end medium selection section -->
 	<!-- start the footer -->
+<?php
+get_footer();
+	
