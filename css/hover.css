@@ -1,0 +1,181 @@
+/* Image hover effects */
+
+figure.effect-hover {
+	z-index: auto;
+	overflow: visible;
+}
+
+figure.effect-hover:before,
+figure.effect-hover h2:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	content: '';
+	-webkit-transition: opacity 0.35s;
+	transition: opacity 0.35s;
+}
+
+figure.effect-hover:before {
+	box-shadow: 0px 0px 25px 5px rgba(209,182,160,0.7);
+	opacity: 0;
+}
+
+figure.effect-hover img {
+	opacity: 1;
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: perspective(1000px) translate3d(0,0,0);
+	transform: perspective(1000px) translate3d(0,0,0);
+}
+
+figure.effect-hover:hover:before {
+	opacity: 1;
+}
+
+figure.effect-hover:hover img {
+	-webkit-transform: perspective(1000px) translate3d(0,0,5px);
+	transform: perspective(1000px) translate3d(0,0,5px);
+}
+
+figure.effect-hover img {
+	-webkit-transition: opacity 0.75s, -webkit-transform 0.75s;
+	transition: opacity 0.75s, transform 0.75s;
+	/*-webkit-transform: scale(1.12);
+	transform: scale(1.12); */
+	transition: border-color .7s ease-in-out;
+    -webkit-transition: border-color .7s ease-in-out;
+    -moz-transition: border-color .7s ease-in-out;
+    border: 1px solid transparent;
+}
+
+figure.effect-hover:hover img {
+	opacity: 0.7;
+	border-top-color: #b14742;
+	border-bottom-color: #b14742;
+	border-left-color: #b14742;
+	border-right-color: #b14742;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+
+figure.effect-hover figcaption::before,
+figure.effect-hover p {
+	opacity: 0;
+	-webkit-transition: opacity 0.65s, -webkit-transform 0.65s;
+	transition: opacity 0.65s, transform 0.65s;
+}
+
+figure.effect-hover:hover figcaption::before,
+figure.effect-hover:hover p {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+
+/** bring back if I want the text to scale 
+
+	figure.effect-chico p {
+		margin: 0 auto;
+		-webkit-transform: scale(1.5);
+		transform: scale(1.5);
+	} 
+
+**/
+
+
+/* row hover effect style */
+
+.row-effect figure {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	margin: 10px 1%;
+	height: auto;
+	background: #fff;
+	text-align: center;
+	cursor: pointer;
+}
+
+.row-effect figure img {
+	position: relative;
+	display: block;
+min-height: 100%;
+	max-width: 100%; 
+	opacity: 1;
+}
+
+.row-effect figure figcaption {
+	display: none; /* temporary */
+	padding: 2em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.row-effect figure figcaption::before,
+.row-effect figure figcaption::after {
+	pointer-events: none;
+}
+
+/* 
+.row-effect figure figcaption,
+.row-effect figure figcaption > a {
+	position: absolute;
+	top: 5%;
+	left: 0;
+	width: 79%;
+}
+*/
+
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.row-effect figure figcaption > a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+
+
+
+.row-effect figure h2,
+.row-effect figure p {
+	margin: 0;
+}
+
+.row-effect figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+
+
+.row-effect {
+	position: relative;
+	margin: 0 auto;
+	/* padding: 1em 0 4em; */
+	list-style: none;
+	text-align: center;
+}
+
+@media screen and (max-width: 50em) {
+	.content {
+		padding: 0 10px;
+		text-align: center;
+	}
+	.row-effect figure {
+		display: inline-block;
+		float: none;
+		margin: 0px auto;
+	}
+}

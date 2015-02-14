@@ -1,0 +1,22 @@
+/* css for forms */
+
+
+/* input styles */
+
+
+.signup-field {
+	background-color: #fff;
+	width: 215px;
+	padding: 10px 0px 10px 15px;
+	border: 1px solid #f1dfd2;
+	font-family: nunito;
+font-weight: lighter;
+} 
+
+.signup-button a {
+	padding-left: 11px;
+	padding-top: 12px;
+	margin-top: 6px;
+	top: 1px;
+	position: relative;
+}
