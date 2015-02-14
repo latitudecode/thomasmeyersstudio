@@ -7,6 +7,14 @@
 ?>
 
 	<footer>
+		<div class="product-menu"> <!-- start product menu -->
+			<ul>
+				<li class="previous"><a href="#"><i class="fa fa-arrow-circle-left"></i></a></li>
+				<li class="product-title">Treasure - 35.5" X 22.5"</li>
+				<li class="grid-block"><a href="#"><i class="fa fa-th-large"></i></a></li>
+				<li class="next"><a href="#"><i class="fa fa-arrow-circle-right"></i></a></li>												
+			</ul>
+		</div> <!-- end product menu -->		
 		<div class="signup-man fl">
 			<input class="signup-field" type="email" required="" placeholder="Email address" id="mce-EMAIL" name="EMAIL" value="">
 				<button class="signup-button" id="mc-embedded-subscribe" name="subscribe" type="submit">
