@@ -68,11 +68,7 @@
 		<nav class="primary-nav">
 			<ul class="nav-links fr">
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-				<!-- <li><a href="#">work</a></li>
-				<li><a href="#">studio</a></li>
-				<li><a href="#">explore</a></li>
-				<li><a href="#">info</a></li>
-				<li class="pushup"><a href="#">contact</a></li>		-->										
+				<!-- <li class="pushup"><a href="#">contact</a></li> figure out -->								
 			</ul>
 		</nav>
 		<!-- end to main navigation and logo -->
@@ -87,11 +83,13 @@
 	    	  <a class="exit-off-canvas"><i class="fa fa-times"></i></a>
 	        <!-- whatever you want goes here -->
 	        <ul>
-				<li><a href="#">work</a></li>
+	        	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+				<!-- <li><a href="#">work</a></li>
 				<li><a href="#">studio</a></li>
 				<li><a href="#">explore</a></li>
 				<li><a href="#">info</a></li>
-				<li><a href="#">contact</a></li>												
+				<li><a href="#">contact</a></li>
+				-->										
 			</ul>
 	    </aside>
 	</div> <!-- end main flyout menu content -->
