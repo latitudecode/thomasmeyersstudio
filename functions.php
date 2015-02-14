@@ -43,7 +43,7 @@ function create_post_type() {
             ),
             'public' => true,
             'has_archive' => true,
-            'rewrite' => array('slug' => 'project'),
+            'rewrite' => array('slug' => 'products'),
       		'taxonomies' => array('category'),
       		'supports'  =>
             	array( 
@@ -56,6 +56,8 @@ function create_post_type() {
         )
     );
 }
+
+
 
 /*-----------------------------------------------------------------------------------*/
 /* Remove Unwanted Admin Menu Items */
