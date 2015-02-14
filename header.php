@@ -72,6 +72,15 @@
 			</ul>
 		</nav>
 		<!-- end to main navigation and logo -->
+		<!-- start to sub navigation -->
+		<nav class="sub-nav">
+			<ul class="sub-nav-links">
+				<li><a href="#">collage</a></li>
+				<li><a href="#">mosaic</a></li>
+				<li><a href="#">collaboration</a></li>
+			</ul>
+		</nav>
+		<!-- end to sub navigation -->		
 	</header>
 
 	<!-- end of the header and navigation -->

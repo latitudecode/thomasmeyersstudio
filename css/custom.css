@@ -488,7 +488,7 @@ ul.media, ul.media li {
 
 .category-intro {
 	height: 380px; /* change this to larger later */
-	background-image: url(file:///Users/sambakersalmon/Documents/web-developer/tom-meyers-studio/core-markup/thomas-meyers-studio-core/images/collage-bg.jpg);
+	background-image: url(<?php bloginfo('template_directory'); ?>/images/collage-bg.jpg);
 	top: 55px;
 	position: relative;
 	border-bottom: 1px solid #f1dfd2;
