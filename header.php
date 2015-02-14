@@ -49,7 +49,7 @@
 	<!-- start the header and navigation -->
 
 	<header>
-		
+
 		<div class="flyout">
 			 <a class="left-off-canvas-toggle" href="#" ><i class="fa fa-bars"></i></a> <!-- flyout menu icon -->
 		</div>
