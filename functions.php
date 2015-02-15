@@ -124,6 +124,14 @@ add_action('admin_menu', 'remove_admin_menu_items');
 		'secondary' => __( 'Secondary menu in left sidebar', 'thomasmeyersstudio' ),
 	) );
 
+/*-----------------------------------------------------------------------------------*/
+/* Adding excerpts */
+/*-----------------------------------------------------------------------------------*/
+
+add_action( 'init', 'my_add_excerpts_to_pages' );
+function my_add_excerpts_to_pages() {
+     add_post_type_support( 'page', 'excerpt' );
+}
 
 
 ?>

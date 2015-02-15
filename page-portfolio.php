@@ -14,45 +14,61 @@
 
 	<section class="main-content product-details"> <!-- main product wrapper -->
 		<div class="product-section"> <!-- product wrap -->
-				<div class="row row-effect"> <!-- columns of mediums -->
+				<div class="row row-effect"> <!-- columns of mediums -->				
+
+            			<?php query_posts('page_id=16'); if(have_posts()) : while(have_posts()) : the_post(); ?><!-- starting the WordPress loop -->
 
 							<div class="col-md-4">  <!-- medium entry -->
 								<ul class="media">
 									<li>
-										<a href="#">	
+										<a href="<?php the_permalink(); ?>">	
 											<figure class="effect-hover"> 
-												<img src="<?php bloginfo('template_directory'); ?>/images/mosaic.png" alt="img15"/> 
-													<figcaption>
-														<p></p>
-													</figcaption>			
+									          <?php 
+					                            if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+					                              the_post_thumbnail();
+					                            } 
+					                            ?>		
 											</figure> 
 										</a>
 									</li>
 									<li>	
-										<h2>mosaic</h2>
-										<p>A series of collage drawings and works that often and integrate bamboo for a three dimensional effect.</p>
+										<h2><?php the_title(); ?></h2>
+										<p><?php the_excerpt(); ?></p>
 									</li>
 								</ul>
 							</div>	<!-- medium entry -->
 
+						<?php endwhile; ?>
+			            <?php else : ?>
+			                <p>Whoops! We are working on it.</p>
+			            <?php endif; ?> <!-- end loop -->
+
+            			<?php query_posts('page_id=18'); if(have_posts()) : while(have_posts()) : the_post(); ?><!-- starting the WordPress loop -->
+
 							<div class="col-md-4">  <!-- medium entry -->
 								<ul class="media">
 									<li>
-										<a href="#">	
+										<a href="<?php the_permalink(); ?>">	
 											<figure class="effect-hover"> 
-												<img src="<?php bloginfo('template_directory'); ?>/images/mosaic.png" alt="img15"/> 
-													<figcaption>
-														<p></p>
-													</figcaption>			
+									          <?php 
+					                            if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+					                              the_post_thumbnail();
+					                            } 
+					                            ?>		
 											</figure> 
 										</a>
 									</li>
 									<li>	
-										<h2>mosaic</h2>
-										<p>A series of collage drawings and works that often and integrate bamboo for a three dimensional effect.</p>
+										<h2><?php the_title(); ?></h2>
+										<p><?php the_excerpt(); ?></p>
 									</li>
 								</ul>
 							</div>	<!-- medium entry -->
+
+						<?php endwhile; ?>
+			            <?php else : ?>
+			                <p>Whoops! We are working on it.</p>
+			            <?php endif; ?> <!-- end loop -->
 
 							<div class="col-md-4">  <!-- medium entry -->
 								<ul class="media">
