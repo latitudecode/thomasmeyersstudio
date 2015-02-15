@@ -277,6 +277,10 @@ width: 29%;
 	float: none;
 }
 
+.signup-man {
+padding: 65px 10px 45px 35px;
+}
+
 }
 
 /* ===================== tablet 979px to 768px =============================== */
@@ -304,6 +308,7 @@ width: 29%;
 		.main-columns {
 		top: -50px;
 	}
+
 
 
 }
