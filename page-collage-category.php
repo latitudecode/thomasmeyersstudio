@@ -46,13 +46,15 @@
 		<!-- start three columns for category content -->
 			<div class="row row-effect"> 
 			  <div class="col-md-3">  <!-- first column for portait work -->
-			  	<figure class="effect-hover"> 
-			  		<img class="port-sml" src="<?php bloginfo('template_directory'); ?>/images/portrait.png" />
-						<figcaption>
-							<p>Title</p>
-							<p>34" x 44"</p>
-						</figcaption>			  		
-			  	</figure>
+			  	<a href="http://localhost:8888/products/series-i/">
+				  	<figure class="effect-hover"> 
+				  		<img class="port-sml" src="<?php bloginfo('template_directory'); ?>/images/portrait.png" />
+							<figcaption>
+								<p>Title</p>
+								<p>34" x 44"</p>
+							</figcaption>			  		
+				  	</figure>
+			  	</a>
 			  	<figure class="effect-hover"> 			  	
 			  		<img class="port-sml" src="<?php bloginfo('template_directory'); ?>/images/portrait-2.png" />
 						<figcaption>

@@ -77,7 +77,7 @@
 			<ul class="sub-nav-links">
 				<li><a href="/work/collage">collage</a></li>
 				<li><a href="/work/mosaic">mosaic</a></li>
-				<li><a href="/work/collaboration">collaboration</a></li>
+				<!-- <li><a href="/work/collaboration">collaboration</a></li>-->
 			</ul>
 		</nav>
 		<!-- end to sub navigation -->		
