@@ -61,7 +61,7 @@
 		<!-- start to main navigation and logo -->
 		<div class="logo fl">
 			<ul>
-				<li><a href="#"><img width="60" src="<?php bloginfo('template_directory'); ?>/images/logo.png" /></a></li>
+				<li><a href="<?php bloginfo('url'); ?>"><img width="60" src="<?php bloginfo('template_directory'); ?>/images/logo.png" /></a></li>
 				<li class="logo-text">thomas meyers studio</li>
 			</ul>
 		</div>

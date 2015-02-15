@@ -12,17 +12,18 @@
 				
 					<?php if(get_post_meta()) { ?>
 						
-						<img class="product" width=300 src="<?php echo get_post_meta(); ?>" />
+						<img class="product" width=600 src="<?php echo get_post_meta(); ?>" />
 						
 					<?php } else { ?>
 						
-						<img class="product" width=300  src="<?php echo $imgsrc[0]; ?>" />
+						<img class="product" width=600 src="<?php echo $imgsrc[0]; ?>" />
 						
 					<?php } ?>
 				
+					<a href="<?php echo $imgsrc[0]; ?>"><i class="fa fa-expand"></i></a> <!-- expander baby -->
+
 				<?php endwhile; endif; wp_reset_query(); ?>	
 
-				<a href="#"><i class="fa fa-expand"></i></a> <!-- expander baby -->
 		</div> <!-- end product wrap -->
 	</section> <!-- end main product wrapper -->
 
