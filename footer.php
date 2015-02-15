@@ -10,7 +10,7 @@
 		<div class="product-menu"> <!-- start product menu -->
 			<ul>
 				<li class="previous"><a href="#"><i class="fa fa-arrow-circle-left"></i></a></li>
-				<li class="product-title">Treasure - 35.5" X 22.5"</li>
+				<li class="product-title"><?php the_title(); ?> - <?php echo get_post_meta($post->ID, 'latitude_size', true); ?></li>
 				<li class="grid-block"><a href="#"><i class="fa fa-th-large"></i></a></li>
 				<li class="next"><a href="#"><i class="fa fa-arrow-circle-right"></i></a></li>												
 			</ul>

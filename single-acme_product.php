@@ -7,8 +7,21 @@
 
 	<section class="main-content product-detail"> <!-- main product wrapper -->
 		<div class="product-detail-section"> <!-- product wrap -->
-			<!-- <img class="product" width=1000 src="images/new-collage.png" /> --><!-- product image -->
-			<img class="product" width=300 src="<?php bloginfo('template_directory'); ?>/images/new-collage2.png" /> <!-- product image -->
+
+				<?php if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+				
+					<?php if(get_post_meta()) { ?>
+						
+						<img class="product" width=300 src="<?php echo get_post_meta(); ?>" />
+						
+					<?php } else { ?>
+						
+						<img class="product" width=300  src="<?php echo $imgsrc[0]; ?>" />
+						
+					<?php } ?>
+				
+				<?php endwhile; endif; wp_reset_query(); ?>	
+
 				<a href="#"><i class="fa fa-expand"></i></a> <!-- expander baby -->
 		</div> <!-- end product wrap -->
 	</section> <!-- end main product wrapper -->
