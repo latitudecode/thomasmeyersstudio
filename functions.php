@@ -122,6 +122,7 @@ function smashing_add_post_meta_boxes() {
   );
 }
 
+
 /* Display the post meta box. */
 function smashing_post_class_meta_box( $object, $box ) { ?>
 
@@ -130,6 +131,7 @@ function smashing_post_class_meta_box( $object, $box ) { ?>
   <p>
     <label for="smashing-post-class"><?php _e( "City", 'example' ); ?></label>
     <br />
+    <input class="widefat" type="text" name="smashing-post-class" id="smashing-post-class" value="<?php echo esc_attr( get_post_meta( $object->ID, 'smashing_post_class', true ) ); ?>" size="30" />
     <input class="widefat" type="text" name="smashing-post-class" id="smashing-post-class" value="<?php echo esc_attr( get_post_meta( $object->ID, 'smashing_post_class', true ) ); ?>" size="30" />
 
   </p>
