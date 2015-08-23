@@ -112,13 +112,22 @@ function smashing_post_meta_boxes_setup() {
 
 function smashing_add_post_meta_boxes() {
 
-  add_meta_box(
-    'smashing-post-class',      // Unique ID
-    esc_html__( 'Post Class', 'example' ),    // Title
-    'smashing_post_class_meta_box',   // Callback function
-    'galleries',         // Admin page (or post type)
-    'side',         // Context
-    'default'         // Priority
+  $meta_box = array(
+    'id' => 'smashing-post-class',      // Unique ID
+    'title' => 'Galllery baby',
+    'callback' => 'smashing_post_class_meta_box',
+    'page' => 'galleries',         // Admin page (or post type)
+    'context' => 'side',         // Context
+    'priority' => 'default',        // Priority
+    'fields' => array(
+
+    	array(
+    		"name" => "City",
+    		"desc" => "Where is the local",
+    		"id" => $prefix."smashing-post-class",
+    		"type" => "text"
+    		)
+    	)
   );
 }
 
