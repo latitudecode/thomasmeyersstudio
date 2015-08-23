@@ -93,73 +93,80 @@ function creater_post_typer() {
 /* META BOXES */
 /*-----------------------------------------------------------------------------------*/
 
-/* GALLERY META BOX */
+/* Fire our meta box setup function on the post editor screen. */
+add_action( 'load-post.php', 'smashing_post_meta_boxes_setup' );
+add_action( 'load-post-new.php', 'smashing_post_meta_boxes_setup' );
 
-/* add the action */
-add_action( 'add_meta_boxes', 'cd_meta_box_add' );
 
-/* creates the meta box in backend */
-function cd_meta_box_add()
-{
-    add_meta_box( 'my-meta-box-id', 'My First Meta Box', 'cd_meta_box_cb', 'post', 'normal', 'high' );
+/* Meta box setup function. */
+function smashing_post_meta_boxes_setup() {
+
+  /* Add meta boxes on the 'add_meta_boxes' hook. */
+  add_action( 'add_meta_boxes', 'smashing_add_post_meta_boxes' );
+
+   /* Save post meta on the 'save_post' hook. */
+  add_action( 'save_post', 'smashing_save_post_class_meta', 10, 2 );
 }
 
-/* creates the form fields in backend */
-function cd_meta_box_cb()
-{
+function smashing_add_post_meta_boxes() {
 
-    // $post is already set, and contains an object: the WordPress post
-    global $post;
-    $values = get_post_custom( $post->ID );
-    $text = isset( $values['my_meta_box_text'] ) ? $values['my_meta_box_text'] : '';
-     
-    // We'll use this nonce field later on when saving.
-    wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
-    ?>
-    <p>
-        <label for="my_meta_box_text">Text Label</label>
-        <input type="text" name="my_meta_box_text" id="my_meta_box_text" value="<?php echo $text; ?>" />
-    </p>
-     
-    <?php    
-} 
-
-
-
-/* saves post */
-add_action( 'save_post', 'cd_meta_box_save' );
-function cd_meta_box_save( $post_id )
-{
-    // Bail if we're doing an auto save
-    if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
-     
-    // if our nonce isn't there, or we can't verify it, bail
-    if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'my_meta_box_nonce' ) ) return;
-     
-    // if our current user can't edit this post, bail
-    if( !current_user_can( 'edit_post' ) ) return;
-     
-    // now we can actually save the data
-    $allowed = array( 
-        'a' => array( // on allow a tags
-            'href' => array() // and those anchors can only have href attribute
-        )
-    );
-     
-    // Make sure your data is set before trying to save it
-    if( isset( $_POST['my_meta_box_text'] ) )
-        update_post_meta( $post_id, 'my_meta_box_text', wp_kses( $_POST['my_meta_box_text'], $allowed ) );
-         
-    if( isset( $_POST['my_meta_box_select'] ) )
-        update_post_meta( $post_id, 'my_meta_box_select', esc_attr( $_POST['my_meta_box_select'] ) );
-         
-    // This is purely my personal preference for saving check-boxes
-    $chk = isset( $_POST['my_meta_box_check'] ) && $_POST['my_meta_box_select'] ? 'on' : 'off';
-    update_post_meta( $post_id, 'my_meta_box_check', $chk );
+  add_meta_box(
+    'smashing-post-class',      // Unique ID
+    esc_html__( 'Post Class', 'example' ),    // Title
+    'smashing_post_class_meta_box',   // Callback function
+    'post',         // Admin page (or post type)
+    'side',         // Context
+    'default'         // Priority
+  );
 }
 
+/* Display the post meta box. */
+function smashing_post_class_meta_box( $object, $box ) { ?>
 
+  <?php wp_nonce_field( basename( __FILE__ ), 'smashing_post_class_nonce' ); ?>
 
+  <p>
+    <label for="smashing-post-class"><?php _e( "Add a custom CSS class, which will be applied to WordPress' post class.", 'example' ); ?></label>
+    <br />
+    <input class="widefat" type="text" name="smashing-post-class" id="smashing-post-class" value="<?php echo esc_attr( get_post_meta( $object->ID, 'smashing_post_class', true ) ); ?>" size="30" />
+  </p>
+<?php }
+
+/* Save the meta box's post metadata. */
+function smashing_save_post_class_meta( $post_id, $post ) {
+
+  /* Verify the nonce before proceeding. */
+  if ( !isset( $_POST['smashing_post_class_nonce'] ) || !wp_verify_nonce( $_POST['smashing_post_class_nonce'], basename( __FILE__ ) ) )
+    return $post_id;
+
+  /* Get the post type object. */
+  $post_type = get_post_type_object( $post->post_type );
+
+  /* Check if the current user has permission to edit the post. */
+  if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
+    return $post_id;
+
+  /* Get the posted data and sanitize it for use as an HTML class. */
+  $new_meta_value = ( isset( $_POST['smashing-post-class'] ) ? sanitize_html_class( $_POST['smashing-post-class'] ) : '' );
+
+  /* Get the meta key. */
+  $meta_key = 'smashing_post_class';
+
+  /* Get the meta value of the custom field key. */
+  $meta_value = get_post_meta( $post_id, $meta_key, true );
+
+  /* If a new meta value was added and there was no previous value, add it. */
+  if ( $new_meta_value && '' == $meta_value )
+    add_post_meta( $post_id, $meta_key, $new_meta_value, true );
+
+  /* If the new meta value does not match the old value, update it. */
+  elseif ( $new_meta_value && $new_meta_value != $meta_value )
+    update_post_meta( $post_id, $meta_key, $new_meta_value );
+
+  /* If there is no new meta value but an old value exists, delete it. */
+  elseif ( '' == $new_meta_value && $meta_value )
+    delete_post_meta( $post_id, $meta_key, $meta_value );
+}
 
 /*-----------------------------------------------------------------------------------*/
 /* Remove Unwanted Admin Menu Items */
