@@ -93,6 +93,8 @@ function creater_post_typer() {
 /* META BOXES */
 /*-----------------------------------------------------------------------------------*/
 
+/* GALLERY POST META BOX */
+
 /* Fire our meta box setup function on the post editor screen. */
 add_action( 'load-post.php', 'smashing_post_meta_boxes_setup' );
 add_action( 'load-post-new.php', 'smashing_post_meta_boxes_setup' );
@@ -126,9 +128,10 @@ function smashing_post_class_meta_box( $object, $box ) { ?>
   <?php wp_nonce_field( basename( __FILE__ ), 'smashing_post_class_nonce' ); ?>
 
   <p>
-    <label for="smashing-post-class"><?php _e( "Add a custom CSS class, which will be applied to WordPress' post class.", 'example' ); ?></label>
+    <label for="smashing-post-class"><?php _e( "City", 'example' ); ?></label>
     <br />
     <input class="widefat" type="text" name="smashing-post-class" id="smashing-post-class" value="<?php echo esc_attr( get_post_meta( $object->ID, 'smashing_post_class', true ) ); ?>" size="30" />
+
   </p>
 <?php }
 
