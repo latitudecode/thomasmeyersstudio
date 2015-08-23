@@ -47,12 +47,11 @@ function creates_post_types() {
       ),
       'public' => true,
       'has_archive' => true,      
-      'rewrite' => array('slug' => 'gallery'),
+      'rewrite' => array('slug' => 'galleries'),
       'supports' => 
       		array(
       			'title',
       			'custom-fields',
-      			'editor',
       			'category',
       			'author',
       			'thumbnail'
@@ -67,15 +66,15 @@ function creates_post_types() {
 
 add_action( 'init', 'creater_post_typer' );
 function creater_post_typer() {
-  register_post_type( 'events',
+  register_post_type( 'shows',
     array(
       'labels' => array(
-        'name' => __( 'Events' ),
-        'singular_name' => __( 'Event' )
+        'name' => __( 'Shows' ),
+        'singular_name' => __( 'Show' )
       ),
       'public' => true,
       'has_archive' => true,      
-      'rewrite' => array('slug' => 'event'),
+      'rewrite' => array('slug' => 'show'),
       'supports' => 
       		array(
       			'title',
@@ -87,6 +86,52 @@ function creater_post_typer() {
 		)
     )
   );
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* META BOXES */
+/*-----------------------------------------------------------------------------------*/
+
+/* GALLERY META BOX */
+
+add_action( 'add_meta_boxes', 'cd_meta_box_add' );
+
+function cd_meta_box_add()
+{
+    add_meta_box( 'my-meta-box-id', 'Gallery', 'cd_meta_box_cb', 'galleries', 'normal', 'high' );
+}
+
+function cd_meta_box_cb()
+{
+{
+    // $post is already set, and contains an object: the WordPress post
+    global $post;
+    $values = get_post_custom( $post->ID );
+    $text = isset( $values['my_meta_box_text'] ) ? $values['my_meta_box_text'] : '';
+    $text = isset( $values['my_meta_box_text2'] ) ? $values['my_meta_box_text2'] : '';
+    $text = isset( $values['my_meta_box_text3'] ) ? $values['my_meta_box_text3'] : '';
+
+     
+    // We'll use this nonce field later on when saving.
+    wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
+    ?>
+    <p>
+        <label for="my_meta_box_text">City</label>
+        <input type="text" name="my_meta_box_text" id="my_meta_box_text" value="<?php echo $text; ?>" />
+    </p>
+
+    <p>
+        <label for="my_meta_box_text">State</label>
+        <input type="text" name="my_meta_box_text2" id="my_meta_box_text2" value="<?php echo $text; ?>" />
+    </p>
+
+    <p>
+        <label for="my_meta_box_text">Website</label>
+        <input type="text" name="my_meta_box_text3" id="my_meta_box_text3" value="<?php echo $text; ?>" />
+    </p>         
+
+    <?php    
+}  
 }
 
 
@@ -103,7 +148,7 @@ function remove_admin_menu_items() {
 		if(in_array($item[0] != NULL?$item[0]:"" , $remove_menu_items)){
 		unset($menu[key($menu)]);}
 	}
-
+/*
 	$remove_menu_items = array(__('Posts'));
 	global $menu;
 	end ($menu);
@@ -112,6 +157,7 @@ function remove_admin_menu_items() {
 		if(in_array($item[0] != NULL?$item[0]:"" , $remove_menu_items)){
 		unset($menu[key($menu)]);}
 	}
+*/
 
 	$remove_menu_items = array(__('Tools'));
 	global $menu;
