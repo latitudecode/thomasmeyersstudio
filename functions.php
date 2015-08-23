@@ -2,36 +2,12 @@
 
 add_theme_support( 'post-thumbnails' ); 
 
-wp_insert_term( $term, $taxonomy, $args = array() );
+/*-----------------------------------------------------------------------------------*/
+/* Custom post types*/
+/*-----------------------------------------------------------------------------------*/
 
-/*
-add_action( 'init', 'create_posttype' );
-function create_posttype() {
-  register_post_type( 'acme_product',
-    array(
-      'labels' => array(
-        'name' => __( 'Projects' ),
-        'singular_name' => __( 'Project' )
-      ),
-      'public' => true,
-      'has_archive' => true,
-      'rewrite' => array('slug' => 'portfolio'),
-      'taxonomies' => array('category'),
-      'supports'  =>
-            array( 
-            	'title',
-                'comments', 
-                'editor',
-                'thumbnail', 
-                'custom-fields', 
-                'revisions'),
-    )
-  );
-} 
-*/
-
-
-
+/* PRODUCT */
+/* wp_insert_term( $term, $taxonomy, $args = array() ); */
 
 add_action( 'init', 'create_post_type' );
 function create_post_type() {
@@ -57,6 +33,61 @@ function create_post_type() {
     );
 }
 
+/* GALLERIES */
+/* wp_insert_term( $term, $taxonomy, $args = array() ); */
+
+
+add_action( 'init', 'creates_post_types' );
+function creates_post_types() {
+  register_post_type( 'galleries',
+    array(
+      'labels' => array(
+        'name' => __( 'Galleries' ),
+        'singular_name' => __( 'Gallery' )
+      ),
+      'public' => true,
+      'has_archive' => true,      
+      'rewrite' => array('slug' => 'gallery'),
+      'supports' => 
+      		array(
+      			'title',
+      			'custom-fields',
+      			'editor',
+      			'category',
+      			'author',
+      			'thumbnail'
+		)
+    )
+  );
+}
+
+/* EVENTS */
+/* wp_insert_term( $term, $taxonomy, $args = array() ); */
+
+
+add_action( 'init', 'creater_post_typer' );
+function creater_post_typer() {
+  register_post_type( 'events',
+    array(
+      'labels' => array(
+        'name' => __( 'Events' ),
+        'singular_name' => __( 'Event' )
+      ),
+      'public' => true,
+      'has_archive' => true,      
+      'rewrite' => array('slug' => 'event'),
+      'supports' => 
+      		array(
+      			'title',
+      			'custom-fields',
+      			'editor',
+      			'category',
+      			'author',
+      			'thumbnail'
+		)
+    )
+  );
+}
 
 
 /*-----------------------------------------------------------------------------------*/

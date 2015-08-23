@@ -9,12 +9,12 @@
 ?>
 
 
-<?php get_header(); ?>
+<?php get_header('subnav'); ?>
 
 	<div class="clear"></div>
 	<!-- end of the header and navigation -->
 	<!-- start main content product -->
-	<div class="category-intro">
+	<div class="category-intro-mosaic">
 		<!-- main intro category copy image -->
 			<div class="intro">
 				<div class="intro-copy">
@@ -35,7 +35,6 @@
 						$content = get_the_content('');
 						print $content;
 						?>
-
 					</p>
 				</div>
 			</div>
@@ -45,124 +44,106 @@
 	<section class="main-columns category-list"> <!-- main category intro wrapper -->
 		<!-- start three columns for category content -->
 			<div class="row row-effect"> 
+
+			  		<!-- go get the posts -->
+					<?php 
+					    query_posts(array( 
+					        'post_type' => 'acme_product',
+					        'showposts' => 40,
+					        'category__in' => array( 5 )
+					    ) );  
+					?>
+
 			  <div class="col-md-3">  <!-- first column for portait work -->
-			  	<figure class="effect-hover"> 
-			  		<img class="port-sml" src="<?php bloginfo('template_directory'); ?>/images/portrait.png" />
+
+					<?php if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>	
+			  	
+			  	<a href="<?php the_permalink(); ?>">
+				  	<figure class="effect-hover"> 
+
+					<?php 
+					if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+						the_post_thumbnail();
+					} 
+					?>
+
+					<?php $featuredImage = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+
 						<figcaption>
 							<p>Title</p>
 							<p>34" x 44"</p>
 						</figcaption>			  		
-			  	</figure>
-			  	<figure class="effect-hover"> 			  	
-			  		<img class="port-sml" src="<?php bloginfo('template_directory'); ?>/images/portrait-2.png" />
-						<figcaption>
-							<p>Title</p>
-							<p>34" x 44"</p>
-						</figcaption>
-				</figure>	
-			  	<figure class="effect-hover"> 			  	
-			  		<img class="port-sml" src="<?php bloginfo('template_directory'); ?>/images/portrait-2.png" />
-						<figcaption>
-							<p>Title</p>
-							<p>34" x 44"</p>
-						</figcaption>
-				</figure>							  	
+				  	</figure>
+			  	</a>
+					<?php endwhile; endif; wp_reset_query(); ?>  					  	
 			  </div>
+
+			  		<!-- go get the posts -->
+					<?php 
+					    query_posts(array( 
+					        'post_type' => 'acme_product',
+					        'showposts' => 40,
+					        'category__in' => array( 6 )
+					    ) );  
+					?>
+
 			  <div class="col-md-3"> <!-- second column for small landscape work -->
-			  	<figure class="effect-hover"> 			  	
-			  		<img class="land-sml" src="<?php bloginfo('template_directory'); ?>/images/landscape-small.jpg" />
+
+					<?php if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>	
+
+				<a href="<?php the_permalink(); ?>">	
+				  	<figure class="effect-hover"> 
+					
+					<?php 
+					if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+						the_post_thumbnail();
+					} 
+					?>
+
+					<?php $featuredImage = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+
 						<figcaption>
 							<p>Title</p>
 							<p>34" x 44"</p>
 						</figcaption>			  		
-			  	</figure>	
-			  	<figure class="effect-hover"> 			  			  		
-				  	<img class="land-sml" src="<?php bloginfo('template_directory'); ?>/images/landscape-small-2.jpg" />
-						<figcaption>
-							<p>Title</p>
-							<p>34" x 44"</p>
-						</figcaption>			  		
-			  	</figure>				  	
-			  	<figure class="effect-hover"> 				  	
-				  	<img class="land-sml" src="<?php bloginfo('template_directory'); ?>/images/landscape-small-3.jpg" />	
-						<figcaption>
-							<p>Title</p>
-							<p>34" x 44"</p>
-						</figcaption>			  		
-			  	</figure>				  	
-			  	<figure class="effect-hover"> 				  	
-					<img class="land-sml" src="<?php bloginfo('template_directory'); ?>/images/landscape-small.jpg" />
-						<figcaption>
-							<p>Title</p>
-							<p>34" x 44"</p>
-						</figcaption>			  		
-			  	</figure>					
-			  	<figure class="effect-hover"> 					
-				  	<img class="land-sml" src="<?php bloginfo('template_directory'); ?>/images/landscape-small-2.jpg" />
-						<figcaption>
-							<p>Title</p>
-							<p>34" x 44"</p>
-						</figcaption>			  		
-			  	</figure>				  	
-			  	<figure class="effect-hover"> 				  	
-				  	<img class="land-sml" src="<?php bloginfo('template_directory'); ?>/images/landscape-small-3.jpg" />	
-						<figcaption>
-							<p>Title</p>
-							<p>34" x 44"</p>
-						</figcaption>			  		
-			  	</figure>			  					  			  				  	
+				  	</figure>
+				 </a>	
+					<?php endwhile; endif; wp_reset_query(); ?> 				 			  					  			  				  	
 			  </div> 
-			  <div class="col-md-6">  <!-- third column for large landscape work -->
-			  	<figure class="effect-hover"> 			  	 
-				  	 <img class="land-lrg" src="<?php bloginfo('template_directory'); ?>/images/landscape-large.jpg" />
+
+			  		<!-- go get the posts -->
+					<?php 
+					    query_posts(array( 
+					        'post_type' => 'acme_product',
+					        'showposts' => 40,
+					        'category__in' => array( 7 )
+					    ) );  
+					?>
+
+			  <div class="col-md-6"> <!-- second column for small landscape work -->
+
+					<?php if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>	
+
+				<a href="<?php the_permalink(); ?>">	
+				  	<figure class="effect-hover"> 
+					
+					<?php 
+					if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+						the_post_thumbnail();
+					} 
+					?>
+
+					<?php $featuredImage = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+
 						<figcaption>
 							<p>Title</p>
 							<p>34" x 44"</p>
-						</figcaption>
-			  	</figure>				  	 
-			  	<figure class="effect-hover"> 	
-				  	 <img class="land-lrg" src="<?php bloginfo('template_directory'); ?>/images/landscape-large-2.jpg" /> 
-						<figcaption>
-							<p>Title</p>
-							<p>34" x 44"</p>
-						</figcaption>
-			  	</figure>	
-			  	<figure class="effect-hover"> 					  	 
-				  	 <img class="land-lrg" src="<?php bloginfo('template_directory'); ?>/images/landscape-large.jpg" />
-						<figcaption>
-							<p>Title</p>
-							<p>34" x 44"</p>
-						</figcaption>
-			  	</figure>	
-			  	<figure class="effect-hover"> 					  	 
-				  	 <img class="land-lrg" src="<?php bloginfo('template_directory'); ?>/images/landscape-large-2.jpg" /> 
-						<figcaption>
-							<p>Title</p>
-							<p>34" x 44"</p>
-						</figcaption>
-			  	</figure>	
-			  	<figure class="effect-hover"> 					  	 
-				  	 <img class="land-lrg" src="<?php bloginfo('template_directory'); ?>/images/landscape-large.jpg" />
-						<figcaption>
-							<p>Title</p>
-							<p>34" x 44"</p>
-						</figcaption>
-			  	</figure>	
-			  	<figure class="effect-hover"> 					  	 
-				  	 <img class="land-lrg" src="<?php bloginfo('template_directory'); ?>/images/landscape-large-2.jpg" />
-						<figcaption>
-							<p>Title</p>
-							<p>34" x 44"</p>
-						</figcaption>
-			  	</figure>	
-			  	<figure class="effect-hover"> 					  	 
-				  	 <img class="land-lrg" src="<?php bloginfo('template_directory'); ?>/images/landscape-large.jpg" />	
-						<figcaption>
-							<p>Title</p>
-							<p>34" x 44"</p>
-						</figcaption>
-			  	</figure>					  	 		  	 			  	 
+						</figcaption>			  		
+				  	</figure>
+				 </a>	
+					<?php endwhile; endif; wp_reset_query(); ?> 				 			  					  			  				  	
 			  </div>
+
 			</div>
 		<!-- end three column for category content -->
 

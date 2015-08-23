@@ -9,8 +9,8 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/bootstrap-responsive.css" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/normalize.css" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/custom.css" />
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/media.css" /> 
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/device.css" /> 
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/media.css" />
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/device.css" />  
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/pushdown.css" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/slider.css" />
 <!-- google fonts -->
@@ -31,7 +31,7 @@
 <!-- hover action -->
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/hover.css" />	
 <!-- form css -->
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/forms.css" />	
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/forms.css" />
 <!-- google analytics -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -76,7 +76,16 @@
 			</ul>
 		</nav>
 		<!-- end to main navigation and logo -->
-		<nav class="menu push-menu-top">
+		<!-- start to sub navigation -->
+		<nav class="sub-nav">
+			<ul class="sub-nav-links">
+				<li><a href="/new/?page_id=139">collage</a></li>
+				<li><a href="/new/?page_id=141">mosaic</a></li>
+				<!-- <li><a href="/work/collaboration">collaboration</a></li>-->
+			</ul>
+		</nav>
+		<!-- end to sub navigation -->	
+		<nav class="menu push-menu-top-subnav">
 		    <ul>
 		        <li><button class="close-menu"><i class="fa fa-times-circle-o"></i></li>
 		    </ul>

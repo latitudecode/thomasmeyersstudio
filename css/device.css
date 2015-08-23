@@ -8,8 +8,8 @@
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
+and (min-width : 320px) 
+and (max-width : 480px) {
 /* header */
 .primary-nav {  display: none; }
 .logo-text { display: none !important; }
@@ -42,7 +42,7 @@ section.main-content.product-details { top: 20px !important; }
 .main-columns {top: -15px !important;}
 .col-md-3 img { margin-bottom: 25px; }
 /* detial */
-.product-detail-section {text-align: center; padding-bottom: 75px;margin-top: 0px;margin-bottom: 0px;}
+.product-detail-section {text-align: center; padding-bottom: 75px;margin-top: 0px;margin-bottom: 0px;padding-top: 0px;}
 .product-detail-section img.attachment-post-thumbnail.wp-post-image { width: 85%; }
 li.product-title {
   border: none !important; 
@@ -57,7 +57,7 @@ li.product-title {
 li.previous { left: 0px !important; padding: 19px 20px 15px 20px !important;}
 .grid-block, li.next {padding: 19px 20px 15px 20px !important;}
 .main-content.product-detail {  background-color: #474747; padding-top: 40px;}
-.product-menu ul { margin-top: 16px !important; }
+.product-menu ul { margin-top: 13px; }
 /* info */
 .info .right-col {display: none;}
 }
@@ -94,8 +94,8 @@ and (max-width : 320px) {
 
 /* iPads (portrait and landscape) ----------- */
 @media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) {
+and (min-width : 768px) 
+and (max-width : 1024px) {
 /* header */
 .primary-nav {  display: none; }
 .logo-text { display: none !important; }
@@ -125,15 +125,15 @@ li.grid-block, li.previous, li.next {padding: 19px 20px 15px 20px !important;}
 
 /* iPads (landscape) ----------- */
 @media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
+and (min-width : 768px) 
+and (max-width : 1024px) 
 and (orientation : landscape) {
 /* header */
 .primary-nav {  display: none !important; }
 .logo-text { display: none !important; }
 .logo img { left: 5% !important;}
 /* footer */
-footer {margin-top: 70px !important;}
+footer {margin-top: 60px !important;}
 
 /* slider */
 /* homepage */
@@ -146,8 +146,8 @@ footer {margin-top: 70px !important;}
 
 /* iPads (portrait) ----------- */
 @media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
+and (min-width : 768px) 
+and (max-width : 1024px) 
 and (orientation : portrait) {
 /* header */
 /* footer */
@@ -170,7 +170,7 @@ and (min-width : 1024px) {
 
 /* Desktops and laptops ----------- */
 @media only screen 
-and (min-device-width : 1024px) {
+and (min-width : 1024px) {
 /* header */
 .flyout i, .mail i {display: none;}
 .logo img { left: 45px;}
@@ -184,12 +184,12 @@ and (min-device-width : 1024px) {
 
 /* Desktops and laptops ----------- */
 @media only screen 
-and (max-device-width : 1024px) {
+and (max-width : 1024px) {
 /* header */
 .primary-nav {  display: none; }
 .logo-text { display: none !important; }
 .flyout i, .mail i {display: inline;}
-.logo img {left: 46% !important;}
+.logo img {left: 43% !important;}
 /* footer */
 /* slider */
 /* homepage */
@@ -197,6 +197,8 @@ and (max-device-width : 1024px) {
 .sub-nav {position: relative; top: 100px}
 /* list */
 /* detial */
+img.attachment-post-thumbnail.wp-post-image { width: 260px !important}
+section.main-content.product-detail { background-color: #474747 !important;}
 }
 
 /* Large screens ----------- */
@@ -209,6 +211,7 @@ and (min-width : 1824px) {
 /* work */
 /* list */
 /* detial */
+.product-detail-section img { width: 430px !important;}
 }
 
 /* iPhone 4 ----------- */

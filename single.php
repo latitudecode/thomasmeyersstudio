@@ -3,7 +3,7 @@
 /* Basic Single Post Template 
 
 */
-get_header('subnav'); ?>
+get_header(); ?>
 
 
 	<div class="clear"></div>
@@ -36,4 +36,4 @@ get_header('subnav'); ?>
 
 	<!-- start the footer -->
 <?php
-get_footer('menu');
+get_footer();

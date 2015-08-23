@@ -9,7 +9,7 @@
 ?>
 
 
-<?php get_header(); ?>
+<?php get_header('subnav'); ?>
 
 	<div class="clear"></div>
 	<!-- end of the header and navigation -->

@@ -35,7 +35,6 @@ nav a {
 /* what color do you want the site? */
 
 header, .cat-section, footer, .media-selection {
-	background-color: #ffffff;
 	z-index: 9999999 !important;
 }
 

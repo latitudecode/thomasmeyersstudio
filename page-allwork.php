@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Collage list page
+ * Template Name: All work
  * Description: A Page Portfolio page template
  */
 
@@ -9,13 +9,14 @@
 ?>
 
 
-<?php get_header('subnav'); ?>
+<?php get_header(); ?>
 
 	<div class="clear"></div>
 	<!-- end of the header and navigation -->
 	<!-- start main content product -->
+	<!-- removed temp
 	<div class="category-intro-collage">
-		<!-- main intro category copy image -->
+		<!-- main intro category copy image 
 			<div class="intro">
 				<div class="intro-copy">
 					<p>
@@ -30,7 +31,7 @@
 						endwhile;
 						?>
 
-						<!-- get body copy -->
+						<!-- get body copy 
 						<?php
 						$content = get_the_content('');
 						print $content;
@@ -38,10 +39,11 @@
 					</p>
 				</div>
 			</div>
-		<!-- end main intro category copy -->
+		<!-- end main intro category copy 
 	</div>
+-->
 
-	<section class="main-columns category-list"> <!-- main category intro wrapper -->
+	<section style="top: 0px;" class="main-columns category-list"> <!-- main category intro wrapper -->
 		<!-- start three columns for category content -->
 			<div class="row row-effect"> 
 
@@ -50,7 +52,7 @@
 					    query_posts(array( 
 					        'post_type' => 'acme_product',
 					        'showposts' => 40,
-					        'category__in' => array( 4 )
+					        'category__in' => array( 4, 5 )
 					    ) );  
 					?>
 
@@ -83,7 +85,7 @@
 					    query_posts(array( 
 					        'post_type' => 'acme_product',
 					        'showposts' => 40,
-					        'category__in' => array( 3 )
+					        'category__in' => array( 3, 6 )
 					    ) );  
 					?>
 
@@ -116,7 +118,7 @@
 					    query_posts(array( 
 					        'post_type' => 'acme_product',
 					        'showposts' => 40,
-					        'category__in' => array( 2 )
+					        'category__in' => array( 2, 7 )
 					    ) );  
 					?>
 

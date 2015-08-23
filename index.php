@@ -4,29 +4,21 @@
 	<!--- start to the slider -->
 
 	<section class="slider">
-		<div class="home-slider"> <!-- pull in royal slider content/images -->
-			<ul class="slider-buttons">
-				<li><i class="#"></i></li> 
-				<li><i class="#"></i></li>
-				<li><i class="#"></i></li>								
-			</ul>
-			<div class="slide">
-				<img src="<?php bloginfo('template_directory'); ?>/images/slide1.png" /> <!-- slider image -->
+			<div id="cbp-fwslider" class="cbp-fwslider">
+				<ul>
+					<li><img src="<?php bloginfo('template_directory'); ?>/images/slide2.jpg" alt="img02"/></li>
+					<li><img src="<?php bloginfo('template_directory'); ?>/images/slide5.jpg" alt="img01"/></li>
+					<li><img src="<?php bloginfo('template_directory'); ?>/images/slide3.jpg" alt="img03"/></li>
+					<li><img src="<?php bloginfo('template_directory'); ?>/images/slide4.jpg" alt="img04"/></li>
+				</ul>
 			</div>
-			<div class="slide">
-				<!-- <img src="#" /> <!-- slider image -->
-			</div>
-			<div class="slide">
-				<!-- <img src="#" /> <!-- slider image -->
-			</div>			
-		</div>
 	</section>
 
 	<!-- end of the slider section -->
 	<!-- start the medium seleciton with secondary nav -->
 	
 	<section class="cat-section row-effect">
-		<?php query_posts('page_id=16'); if(have_posts()) : while(have_posts()) : the_post(); ?><!-- starting the WordPress loop -->
+		<?php query_posts('page_id=141'); if(have_posts()) : while(have_posts()) : the_post(); ?><!-- starting the WordPress loop -->
 
 			<div class="media-entry-mosaic fl"> <!-- nav for selecting medium type -->
 				 <ul>
@@ -50,7 +42,7 @@
 		    <p>Whoops! We are working on it.</p>
 		<?php endif; ?> <!-- end loop -->
 
-		<?php query_posts('page_id=18'); if(have_posts()) : while(have_posts()) : the_post(); ?><!-- starting the WordPress loop -->	
+		<?php query_posts('page_id=139'); if(have_posts()) : while(have_posts()) : the_post(); ?><!-- starting the WordPress loop -->	
 
 			<div class="media-entry-collage fr"> <!-- nav for selecting medium type -->
 				 <ul>

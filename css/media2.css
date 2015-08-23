@@ -1,0 +1,511 @@
+/*!
+ * Responsive ISH 
+ *
+ * Things from me @sambakessalmon
+ */
+
+/* ===================== tablet 1439 to 768px =============================== */
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@media only screen and (min-width: 920px) and (max-width: 1439px) {
+	.flyout, .mail {
+		display: none;
+	}
+
+}
+
+/* ===================== tablet below 1439 =============================== */
+
+
+@media (max-width : 1439px) {
+
+}
+
+/* ===================== tablet below 1300 =============================== */
+
+@media (max-width : 1300px) {
+
+}
+
+/* ===================== tablet below 1240px =============================== */
+
+@media (max-width : 1240px) {
+
+}  
+
+/* ===================== tablet below 1200px =============================== */
+
+@media (min-width: 1200px) {
+
+}
+
+/* =============================== mobiles below 1200px =================== */
+
+@media (min-width: 1124px) {
+
+.intro {
+	width: 60%;
+}
+
+}
+
+/* =============================== mobiles below 1099px =================== */
+
+@media (max-width : 1099px) {
+
+/* cat list */
+
+.intro {
+	width: 65%;
+}
+
+}
+
+/* =============================== mobiles below 1024px =================== */
+
+@media (max-width : 1024px) {
+
+/* cat list */
+
+.intro {
+	width: 65%;
+}
+
+
+}
+
+
+/* =============================== mobiles below 920px =================== */
+
+@media (max-width : 920px) {
+
+	/* nav */
+
+	.primary-nav, .sub-nav {
+		display: none;
+	}
+
+	li.logo-text {
+		font-size: 0px;
+	}
+
+	.logo {
+		width: 85%;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	/* cat list */
+
+	.intro {
+		width: 75%;
+	}
+
+	.category-intro {
+		top: -15px;
+	}
+
+	/* product detail */
+
+	.main-content {
+		top: 75px;
+	}
+
+	.product-detail {
+		height: 725px;
+	}
+
+	.fa-expand {
+		bottom: 150px;
+	}
+
+}
+
+/* =============================== mobiles below 992px =================== */
+
+@media (min-width: 992px) {
+
+.col-md-4 {
+width: 29%;
+
+}
+
+
+/* ===================== tablet 768px to 979px =============================== */
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+
+	.row-effect figure {
+	float: none;
+	}
+}
+
+/* ===================== tablets and mobile below 980px =============================== */
+
+@media (min-width: 980px) {
+	.main-columns {
+	width: 100%; 
+	}
+
+	.category-list {
+  	height: auto;
+  	margin-bottom: 50px;
+  	}
+
+  		.row-effect figure {
+	float: none;
+	}
+}
+
+/* ===================== tablets and mobile below 979px =============================== */
+
+
+@media (max-width: 979px) {
+
+	.row-effect figure {
+	float: none;
+	}
+
+}
+
+/* =============================== mobiles between 800px and 854px =================== */
+
+@media only screen and (min-width : 979px) and (max-width : 50px) { 
+  
+	.category-list .row .col-md-3 {
+		border-right: none;
+	}
+
+		.row-effect figure {
+	float: none;
+	}
+
+}
+
+/* =============================== mobiles between 800px and 854px =================== */
+
+@media only screen and (min-width : 800px) and (max-width : 854px) { 
+  
+  	.category-list {
+  	height: auto;
+  	}
+
+	.category-list .row .col-md-3 {
+		border-right: none;
+	}
+
+}
+
+/* =============================== mobiles between 855px and 960px =================== */
+
+@media only screen and (min-width : 855px) and (max-width : 960px) { 
+  
+  li.product-title {
+  	padding-right: 47%;
+  }
+
+  	.category-list .row .col-md-3 {
+		border-right: none;
+	}
+
+		.main-columns {
+		top: -50px;
+	}
+
+	.row-effect figure {
+	float: none;
+	}
+
+}
+
+/* =============================== mobiles between 961px and 1099px =================== */
+
+@media only screen and (min-width : 961px) and (max-width : 1099px) { 
+  
+}
+
+/* ===================== tablet 979px to 768px =============================== */
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+  li.product-title {
+  	padding-right: 47%;
+  }
+
+  /* cat list */
+
+  .category-intro {
+  	height: 410px;
+  }
+
+  	.category-list {
+  	height: auto;
+  	}
+
+  		.category-list .row .col-md-3 {
+		border-right: none;
+	}
+
+	.main-columns {
+		top: -50px;
+	}
+
+}
+
+/* ===================== tablet 979px to 768px =============================== */
+
+@media (min-width: 640px) and (max-width: 768px) {
+
+  li.product-title {
+  	padding-right: 37%;
+  }
+
+  /* cat list */
+
+  .category-intro {
+  	height: 430px;
+  }
+
+  	/* cat list */
+
+	.intro {
+		width: 80%;
+	}
+
+.row-effect figure {
+	float: none;
+}
+
+
+
+}
+
+/* ===================== tablet 979px to 768px =============================== */
+
+@media (min-width: 480px) and (max-width: 640px) {
+
+  li.product-title {
+  	padding-right: 27%;
+  }
+
+  	/* cat list */
+
+	.intro {
+		width: 90%;
+	}
+
+	.category-list {
+  	height: auto;
+  	}
+
+  		.category-list .row .col-md-3 {
+		border-right: none;
+	}
+
+		.main-columns {
+		top: -50px;
+	}
+
+
+
+}
+
+/* ===================== tablet 979px to 768px =============================== */
+
+@media (min-width: 50px) and (max-width: 580px) {
+
+	/* navigation and footer and main content */
+
+  	.logo {
+		width: 72%;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.main-content {
+		top: 25px;
+	}
+
+	/* product detail */
+
+	.product-detail {
+		height: 636px;
+	}
+
+	.fa-expand {
+		bottom: 94px;
+		right: 20px;
+	}
+
+	.product-detail-section {
+		padding-bottom: 50px;
+	}
+
+	li.product-title {
+	  	padding-right: 4%;
+	  	font-size: 14px;
+	  	padding: 20px 19px 15px 20px;
+	}
+
+
+
+
+}
+
+/* =============================== mobiles below 768 =================== */
+
+@media (min-width: 768px) {
+
+
+
+}
+
+/* ===================== Mobiles below 767px =============================== */
+
+@media (max-width: 767px) {
+
+	.media-entry-collage.fr, .media-entry-mosaic.fl {
+	width: 100%;
+	}
+
+}
+
+/* ===================== Mobiles between 640px and 720px =============================== */
+
+
+@media (min-width : 500px) and (max-width : 720px) { 
+
+	  /* cat list */
+  
+	  .category-intro {
+	  	height: 455px;
+	  }
+
+	  	.category-list {
+  	height: auto;
+  	}
+
+  		.category-list .row .col-md-3 {
+		border-right: none;
+	}
+
+		.main-columns {
+		top: -50px;
+	}
+
+
+}
+
+
+/* ===================== Mobiles below 480px =============================== */
+
+@media (max-width: 480px) {
+	
+	/* header and navigation */
+
+	.logo img {
+		top: 14px;
+		width: 40px;
+		left: 45%;
+	}
+
+	.mail i, .flyout i {
+		top: 20px;
+	}
+
+	.flyout i {
+		left: 20px;
+	}
+
+	.mail i {
+		right: 20px;
+	}
+
+
+	/* product detail */
+
+	.product-detail-section img {
+		width: 260px;
+	}
+
+	li.product-title {
+		padding-right: 8%;
+		padding-left: 8%;
+	}
+
+	li.next {
+		right: 5px;
+	}
+
+	li.previous, li.next {
+		padding: 19px 18px 13px 18px;
+	}
+
+	.li.product-title {
+		padding: 18px 18px 6px 18px;
+	}
+
+	.product-menu ul {
+		position: relative;
+		left: 0px;
+	}
+
+	li.grid-block {
+		display: none;
+	}
+
+	  /* cat list */
+
+	  .category-intro {
+	  	height: 630px;
+	  }
+
+	.category-list {
+  	height: auto;
+  	}
+
+  		.category-list .row .col-md-3 {
+		border-right: none;
+	}
+
+		.main-columns {
+		top: -50px;
+	}
+
+
+
+}
+
+
+
+/* ===================== Mobiles below 399px =============================== */
+
+@media (min-width : 320px) {
+
+  /* header */
+
+  /* cat list */
+
+  .category-intro {
+  	height: 790px;
+  }
+
+	.category-list {
+	height: auto;
+	}
+
+  	.category-list .row .col-md-3 {
+		border-right: none;
+	}
+
+
+
+
+}
+
+
+

@@ -16,7 +16,7 @@
 		<div class="product-section"> <!-- product wrap -->
 				<div class="row row-effect"> <!-- columns of mediums -->				
 
-            			<?php query_posts('page_id=16'); if(have_posts()) : while(have_posts()) : the_post(); ?><!-- starting the WordPress loop -->
+            			<?php query_posts('page_id=141'); if(have_posts()) : while(have_posts()) : the_post(); ?><!-- starting the WordPress loop -->
 
 							<div class="col-md-4">  <!-- medium entry -->
 								<ul class="media">
@@ -33,7 +33,7 @@
 									</li>
 									<li>	
 										<h2><?php the_title(); ?></h2>
-										<p><?php the_excerpt(); ?></p>
+										<?php the_excerpt(); ?>
 									</li>
 								</ul>
 							</div>	<!-- medium entry -->
@@ -43,7 +43,7 @@
 			                <p>Whoops! We are working on it.</p>
 			            <?php endif; ?> <!-- end loop -->
 
-            			<?php query_posts('page_id=18'); if(have_posts()) : while(have_posts()) : the_post(); ?><!-- starting the WordPress loop -->
+            			<?php query_posts('page_id=139'); if(have_posts()) : while(have_posts()) : the_post(); ?><!-- starting the WordPress loop -->
 
 							<div class="col-md-4">  <!-- medium entry -->
 								<ul class="media">
@@ -60,7 +60,7 @@
 									</li>
 									<li>	
 										<h2><?php the_title(); ?></h2>
-										<p><?php the_excerpt(); ?></p>
+										<?php the_excerpt(); ?>
 									</li>
 								</ul>
 							</div>	<!-- medium entry -->
@@ -70,7 +70,7 @@
 			                <p>Whoops! We are working on it.</p>
 			            <?php endif; ?> <!-- end loop -->
 
-            			<?php query_posts('page_id=20'); if(have_posts()) : while(have_posts()) : the_post(); ?><!-- starting the WordPress loop -->
+            			<?php query_posts('page_id=137'); if(have_posts()) : while(have_posts()) : the_post(); ?><!-- starting the WordPress loop -->
 			            
 							<div class="col-md-4">  <!-- medium entry -->
 								<ul class="media">
@@ -90,7 +90,7 @@
 									</li>
 									<li>	
 										<h2><?php the_title(); ?></h2>
-										<p><?php the_excerpt(); ?></p>
+										<?php the_excerpt(); ?>
 									</li>
 								</ul>
 							</div>	<!-- medium entry -->
