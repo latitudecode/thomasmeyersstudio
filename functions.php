@@ -114,7 +114,7 @@ function smashing_add_post_meta_boxes() {
     'smashing-post-class',      // Unique ID
     esc_html__( 'Post Class', 'example' ),    // Title
     'smashing_post_class_meta_box',   // Callback function
-    'post',         // Admin page (or post type)
+    'galleries',         // Admin page (or post type)
     'side',         // Context
     'default'         // Priority
   );
@@ -166,6 +166,28 @@ function smashing_save_post_class_meta( $post_id, $post ) {
   /* If there is no new meta value but an old value exists, delete it. */
   elseif ( '' == $new_meta_value && $meta_value )
     delete_post_meta( $post_id, $meta_key, $meta_value );
+}
+
+/* Filter the post class hook with our custom post class function. */
+add_filter( 'post_class', 'smashing_post_class' );
+
+function smashing_post_class( $classes ) {
+
+  /* Get the current post ID. */
+  $post_id = get_the_ID();
+
+  /* If we have a post ID, proceed. */
+  if ( !empty( $post_id ) ) {
+
+    /* Get the custom post class. */
+    $post_class = get_post_meta( $post_id, 'smashing_post_class', true );
+
+    /* If a post class was input, sanitize it and add it to the post class array. */
+    if ( !empty( $post_class ) )
+      $classes[] = sanitize_html_class( $post_class );
+  }
+
+  return $classes;
 }
 
 /*-----------------------------------------------------------------------------------*/
