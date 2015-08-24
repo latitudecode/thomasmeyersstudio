@@ -15,7 +15,7 @@
 <section class="main-content info"> <!-- main product wrapper -->
 	<div class="product-section"> <!-- product wrap -->
 			<!-- start the framework here -->
-	<h1 style="text-align: left;">galleries*</h1>		
+	<h1 style="text-align: left;">galleries</h1>		
 		
 			  		<!-- go get the posts -->
 					<?php 
@@ -30,36 +30,42 @@
 
 			<div class="row row-effect"> 
 			  <div class="col-md-3">  
-			  	<p>
-					<?php the_title(); ?><br />
-					<?php echo get_post_meta($post->ID, 'smashing_post_class', true); ?>, <?php echo get_post_meta($post->ID, 'smashing_post_classs', true); ?><br />
-					<a target="_blank" href="http://www.<?php echo get_post_meta($post->ID, 'smashing_post_classss', true); ?>.com">www.<?php echo get_post_meta($post->ID, 'smashing_post_classss', true); ?>.com</a>
-									</p>				  	
-								  </div>
-								  <div class="col-md-3">  
-								  	<p>
-					Karyn Gabaldon Fine Arts<br />
-					Durango, CO<br />
-					<a target="_blank" href="http://www.karyngabaldon.com">www.karyngabaldon.com</a>
-									</p>				  	
-								  </div>
-								  <div class="col-md-3">  
-								  	<p>
-					Appalachian Spring<br />
-					Washington DC, Virginia & Maryland<br />
-					<a target="_blank" href="http://www.appalachianspring.com">www.appalachianspring.com</a>
-									</p>				  	
-								  </div>			  
-								  <div class="col-md-3">  
-								  	<p>
-					Appalachian Spring<br />
-					Washington DC, Virginia & Maryland<br />
-					<a target="_blank" href="http://www.appalachianspring.com">www.appalachianspring.com</a>
-				</p>				  	
-			  </div>
+			  		<p>
+						<?php the_title(); ?><br />
+						<?php echo get_post_meta($post->ID, 'smashing_post_class', true); ?>, <?php echo get_post_meta($post->ID, 'smashing_post_classs', true); ?><br />
+						<a target="_blank" href="http://www.google.com">www.<?php echo get_post_meta($post->ID, 'smashing_post_classss', true); ?>.com</a>
+					</p>				  	
+				</div>
+		
+				<?php endwhile; endif; wp_reset_query(); ?> 				 			  					  			  				  	
+
 			</div> 
 
-		<?php endwhile; endif; wp_reset_query(); ?> 				 			  					  			  				  	
+	<h1 style="text-align: left;">shows</h1>		
+		
+			  		<!-- go get the posts -->
+					<?php 
+					    query_posts(array( 
+					        'post_type' => 'shows',
+					        'showposts' => 40,
+					    ) );  
+					?>
+
+					<?php if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>	
+
+
+			<div class="row row-effect"> 
+			  <div class="col-md-3">  
+			  		<p>
+						<?php the_title(); ?><br />
+						<?php echo get_post_meta($post->ID, 'smashing_post_class', true); ?>, <?php echo get_post_meta($post->ID, 'smashing_post_classs', true); ?><br />
+						<a target="_blank" href="http://www.<?php echo get_post_meta($post->ID, 'smashing_post_classss', true); ?>.com">www.<?php echo get_post_meta($post->ID, 'smashing_post_classss', true); ?>.com</a>
+					</p>				  	
+				</div>
+		
+				<?php endwhile; endif; wp_reset_query(); ?> 				 			  					  			  				  	
+
+			</div> 
 
 
 			<!-- end framwork here -->
