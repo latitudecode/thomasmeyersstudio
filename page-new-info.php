@@ -33,7 +33,7 @@
 			  	<p>
 					<?php the_title(); ?><br />
 					<?php echo get_post_meta($post->ID, 'smashing_post_class', true); ?>, <?php echo get_post_meta($post->ID, 'smashing_post_classs', true); ?><br />
-					<a target="_blank" href="http://www.oregoncoastgalleries.com">www.oregoncoastgalleries.com</a>
+					<a target="_blank" href="http://www.<?php echo get_post_meta($post->ID, 'smashing_post_classss', true); ?>.com">www.<?php echo get_post_meta($post->ID, 'smashing_post_classss', true); ?>.com</a>
 									</p>				  	
 								  </div>
 								  <div class="col-md-3">  
