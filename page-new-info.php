@@ -17,7 +17,9 @@
 			<!-- start the framework here -->
 	<h1 style="text-align: left;">galleries</h1>		
 		
-			  		<!-- go get the posts -->
+
+			<div class="row row-effect"> 
+							  		<!-- go get the posts -->
 					<?php 
 					    query_posts(array( 
 					        'post_type' => 'galleries',
@@ -28,7 +30,6 @@
 					<?php if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>	
 
 
-			<div class="row row-effect"> 
 			  <div class="col-md-3">  
 			  		<p>
 						<?php the_title(); ?><br />
