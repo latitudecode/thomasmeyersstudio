@@ -466,7 +466,7 @@ function smashing_save_post_class_metaaaa( $post_id, $post ) {
     return $post_id;
 
   /* Get the posted data and sanitize it for use as an HTML class. */
-  $new_meta_value = ( isset( $_POST['smashing-post-classsss'] ) ? sanitize_html_class( $_POST['smashing-post-classsss'] ) : '' );
+  $new_meta_value = ( isset( $_POST['smashing-post-classsss'] ) ? esc_html( $_POST['smashing-post-classsss'] ) : '' );
 
   /* Get the meta key. */
   $meta_key = 'smashing_post_classsss';
@@ -503,7 +503,7 @@ function smashing_post_classsss( $classes ) {
 
     /* If a post class was input, sanitize it and add it to the post class array. */
     if ( !empty( $post_class ) )
-      $classes[] = sanitize_html_class( $post_class );
+      $classes[] = esc_html( $post_class );
   }
 
   return $classes;
@@ -571,7 +571,7 @@ function smashing_save_post_class_metaaaaa( $post_id, $post ) {
     return $post_id;
 
   /* Get the posted data and sanitize it for use as an HTML class. */
-  $new_meta_value = ( isset( $_POST['smashing-post-classssss'] ) ? sanitize_html_class( $_POST['smashing-post-classssss'] ) : '' );
+  $new_meta_value = ( isset( $_POST['smashing-post-classssss'] ) ? esc_html( $_POST['smashing-post-classssss'] ) : '' );
 
   /* Get the meta key. */
   $meta_key = 'smashing_post_classssss';
@@ -608,7 +608,7 @@ function smashing_post_classssss( $classes ) {
 
     /* If a post class was input, sanitize it and add it to the post class array. */
     if ( !empty( $post_class ) )
-      $classes[] = sanitize_html_class( $post_class );
+      $classes[] = esc_html( $post_class );
   }
 
   return $classes;
@@ -676,7 +676,7 @@ function smashing_save_post_class_metaaaaaa( $post_id, $post ) {
     return $post_id;
 
   /* Get the posted data and sanitize it for use as an HTML class. */
-  $new_meta_value = ( isset( $_POST['smashing-post-classsssss'] ) ? sanitize_html_class( $_POST['smashing-post-classsssss'] ) : '' );
+  $new_meta_value = ( isset( $_POST['smashing-post-classsssss'] ) ? esc_html( $_POST['smashing-post-classsssss'] ) : '' );
 
   /* Get the meta key. */
   $meta_key = 'smashing_post_classsssss';
@@ -713,7 +713,7 @@ function smashing_post_classsssss( $classes ) {
 
     /* If a post class was input, sanitize it and add it to the post class array. */
     if ( !empty( $post_class ) )
-      $classes[] = sanitize_html_class( $post_class );
+      $classes[] = esc_html( $post_class );
   }
 
   return $classes;
