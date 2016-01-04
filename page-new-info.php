@@ -59,8 +59,8 @@
 			  <div class="col-md-3">  
 			  		<p>
 						<?php the_title(); ?><br />
-						<?php echo get_post_meta($post->ID, 'smashing_post_class', true); ?>, <?php echo get_post_meta($post->ID, 'smashing_post_classs', true); ?><br />
-						<a target="_blank" href="http://www.<?php echo get_post_meta($post->ID, 'smashing_post_classss', true); ?>.com">www.<?php echo get_post_meta($post->ID, 'smashing_post_classss', true); ?>.com</a>
+						<?php echo get_post_meta($post->ID, 'smashing_post_classsss', true); ?> <?php echo get_post_meta($post->ID, 'smashing_post_classssss', true); ?><br />
+						<a target="_blank" href="http://www.<?php echo get_post_meta($post->ID, 'smashing_post_classsssss', true); ?>.com">www.<?php echo get_post_meta($post->ID, 'smashing_post_classsssss', true); ?>.com</a>
 					</p>				  	
 				</div>
 		
