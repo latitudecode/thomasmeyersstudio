@@ -377,6 +377,7 @@ right: 6%;
 	height: 70px;
 	border-bottom: 1px solid #e8e4db;
 	border-top: 1px solid #e8e4db;
+	position: relative;
 }
 
 .sub-nav .nav-links {
@@ -386,6 +387,13 @@ right: 6%;
 
 .sub-nav-links {
 	padding: 8px 25px 0px 40px;
+}
+
+/* product filter */
+
+.filter ul li a:hover {
+    border-bottom: 1.9px solid #c0b08a;
+    padding-bottom: 4px;
 }
 
 /* product menu */

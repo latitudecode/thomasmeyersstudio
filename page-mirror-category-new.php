@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Mosaic list page
+ * Template Name: New mirror list page
  * Description: A Page Portfolio page template
  */
 
@@ -9,52 +9,23 @@
 ?>
 
 
-<?php get_header('subnav'); ?>
+<?php get_header(); ?>
 
 	<div class="clear"></div>
 	<!-- end of the header and navigation -->
 
-
-
-	<!-- start main content product -->
-	<div class="category-intro-mosaic">
-		<!-- main intro category copy image -->
-			<div class="intro">
-				<div class="intro-copy">
-					<p>
-						<?php
-						// Start the Loop.
-						while ( have_posts() ) : the_post();
-
-						// Include the page content template.
-						get_template_part( 'content', 'page' );
-
-
-						endwhile;
-						?>
-
-						<!-- get body copy -->
-						<?php
-						$content = get_the_content('');
-						print $content;
-						?>
-					</p>
-				</div>
-			</div>
-		<!-- end main intro category copy -->
-	</div>
 
 	<!-- start to filtration bar -->
 	<nav class="sub-nav filter">
 		<ul class="sub-nav-links">
 			<li><a href="#">all mosaic</a></li>
 			<li><a href="#">|</a></li>
-			<li><a href="#">one of a kink</a></li>
+			<li><a href="#">one of a kind</a></li>
 		</ul>
 	</nav>
 	<!-- end to filtration bar -->	
 
-	<section class="main-columns category-list"> <!-- main category intro wrapper -->
+	<section class="main-columns category-list mosaic"> <!-- main category intro wrapper -->
 		<!-- start three columns for category content -->
 			<div class="row row-effect"> 
 
@@ -63,7 +34,8 @@
 					    query_posts(array( 
 					        'post_type' => 'acme_product',
 					        'showposts' => 40,
-					        'category__in' => array( 5 )
+					        'category__in' => array( 5 ),
+					        'cat' => -12
 					    ) );  
 					?>
 
@@ -74,17 +46,18 @@
 			  	<a href="<?php the_permalink(); ?>">
 				  	<figure class="effect-hover"> 
 
-					<?php 
-					if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-						the_post_thumbnail();
-					} 
-					?>
-
-					<?php $featuredImage = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+						<?php if(get_post_meta()) { ?>
+							
+							<img class="lazyload" src="<?php echo get_post_meta(); ?>" />
+							
+						<?php } else { ?>
+							
+							<img class="lazyload" src="<?php echo $imgsrc[0]; ?>" />
+							
+						<?php } ?>
 
 						<figcaption>
-							<p>Title</p>
-							<p>34" x 44"</p>
+							<p><?php echo get_post_meta($post->ID, 'latitude_name', true); ?></p>
 						</figcaption>			  		
 				  	</figure>
 			  	</a>
@@ -96,7 +69,8 @@
 					    query_posts(array( 
 					        'post_type' => 'acme_product',
 					        'showposts' => 40,
-					        'category__in' => array( 6 )
+					        'category__in' => array( 6 ),
+					        'cat' => -12
 					    ) );  
 					?>
 
@@ -107,17 +81,18 @@
 				<a href="<?php the_permalink(); ?>">	
 				  	<figure class="effect-hover"> 
 					
-					<?php 
-					if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-						the_post_thumbnail();
-					} 
-					?>
-
-					<?php $featuredImage = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+						<?php if(get_post_meta()) { ?>
+							
+							<img class="lazyload" src="<?php echo get_post_meta(); ?>" />
+							
+						<?php } else { ?>
+							
+							<img class="lazyload" src="<?php echo $imgsrc[0]; ?>" />
+							
+						<?php } ?>
 
 						<figcaption>
-							<p>Title</p>
-							<p>34" x 44"</p>
+							<p><?php echo get_post_meta($post->ID, 'latitude_name', true); ?></p>
 						</figcaption>			  		
 				  	</figure>
 				 </a>	
@@ -129,7 +104,8 @@
 					    query_posts(array( 
 					        'post_type' => 'acme_product',
 					        'showposts' => 40,
-					        'category__in' => array( 7 )
+					        'category__in' => array( 7 ),
+					        'cat' => -12
 					    ) );  
 					?>
 
@@ -140,17 +116,18 @@
 				<a href="<?php the_permalink(); ?>">	
 				  	<figure class="effect-hover"> 
 					
-					<?php 
-					if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-						the_post_thumbnail();
-					} 
-					?>
-
-					<?php $featuredImage = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+						<?php if(get_post_meta()) { ?>
+							
+							<img class="lazyload" src="<?php echo get_post_meta(); ?>" />
+							
+						<?php } else { ?>
+							
+							<img class="lazyload" src="<?php echo $imgsrc[0]; ?>" />
+							
+						<?php } ?>
 
 						<figcaption>
-							<p>Title</p>
-							<p>34" x 44"</p>
+							<p><?php echo get_post_meta($post->ID, 'latitude_name', true); ?></p>
 						</figcaption>			  		
 				  	</figure>
 				 </a>	

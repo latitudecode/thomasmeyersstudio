@@ -79,6 +79,8 @@
 		<!-- start to sub navigation -->
 		<nav class="sub-nav">
 			<ul class="sub-nav-links">
+				<li><a href="/work">work</a></li>
+				<li><a href="#">|</a></li>
 				<li><a href="/new/?page_id=139">collage</a></li>
 				<li><a href="/new/?page_id=141">mosaic</a></li>
 				<!-- <li><a href="/work/collaboration">collaboration</a></li>-->
