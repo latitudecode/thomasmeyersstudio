@@ -95,6 +95,14 @@ nav ul li {
 	padding: 30px 20px 0px 0px;
 }
 
+.primary-nav .sub-menu {
+  display: none;
+}
+
+ul.sub-menu {
+  margin-left: 20px;
+}
+
 ul.nav-links, ul.sub-nav-links {
 margin-top: 16px;
 }
@@ -108,6 +116,11 @@ a.nav-toggler.toggle-push-top {
 	position: absolute;
 	top: 46px;
 	right: 40px;
+}
+
+button.close-menu {
+  background: none;
+  border: none;
 }
 
 .logo ul {
@@ -396,6 +409,7 @@ right: 6%;
     padding-bottom: 4px;
 }
 
+
 /* product menu */
 
 .product-menu ul {
@@ -530,7 +544,7 @@ height: 100%;
 
 .category-intro-mosaic {
 	height: 380px; /* change this to larger later */
-	background-image: url('http://thomasmeyersstudio.com/new/wp-content/themes/thomasmeyersstudio/images/collage-bg.jpg');
+	background-image: url('http://thomasmeyersstudio.com/new/wp-content/themes/thomasmeyersstudio/images/mosaic-bg.jpg');
 	top: 55px;
 	position: relative;
 	border-bottom: 1px solid #f1dfd2;
@@ -538,7 +552,7 @@ height: 100%;
 
 
 .intro {
-	width: 50%;
+	width: 55%;
 	margin-left: 50px;
 	position: relative;
 	top: 30px;
@@ -578,6 +592,12 @@ img.land-sml {
 
 img.port-sml {
 	margin: 0px 10px 40px 10px;
+}
+
+/* product filter pages */
+
+.main-columns.filter {
+    top: 0px;
 }
 
 /* section - product detail */
@@ -641,14 +661,14 @@ img.port-sml {
 }
 
 li.previous { 
-	padding: 22px 20px 15px 20px; 
+	padding: 20px 20px 15px 20px; 
 	border: 1px solid #f1dfd2;
 	left: 5px;
 	position: relative;
 }
 
 li.next { 
-	padding: 22px 20px 15px 20px; 
+	padding: 20px 20px 15px 20px; 
 	border: 1px solid #f1dfd2;
 	position: relative;
 	right: 10px;
@@ -661,7 +681,7 @@ li.product-title {
 }
 
 li.grid-block { 
-	padding: 22px 20px 15px 20px; 
+	padding: 20px 20px 15px 20px; 
 	border: 1px solid #f1dfd2;
 	position: relative;
 	right: 5px;
@@ -681,6 +701,10 @@ li.grid-block {
 
 .product-detail .product-detail-section img.attachment-post-thumbnail.wp-post-image {
 	width: 400px;
+}
+
+.product-detail img {
+    max-height: 500px;
 }
 
 section.main-content.product-detail { background-color: #474747 !important;}
@@ -728,12 +752,13 @@ body.page-id-135 .sub-nav {
 
 .info p {
 	text-align: left;
-    padding: 0px;	
+	padding: 0px;
 }
 
 .info .right-col {
   position: absolute;
   right: 40px;
+  z-index: 99999999 !important;  
 }
 
 

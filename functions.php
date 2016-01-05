@@ -943,6 +943,8 @@ add_action('admin_menu', 'remove_admin_menu_items');
 	register_nav_menus( array(
 		'primary'   => __( 'Top primary menu', 'thomasmeyersstudio' ),
 		'secondary' => __( 'Secondary menu in left sidebar', 'thomasmeyersstudio' ),
+    'tertiary' => __( 'mosaic filter page menu', 'thomasmeyersstudio' ),
+
 	) );
 
 /*-----------------------------------------------------------------------------------*/

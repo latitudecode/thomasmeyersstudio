@@ -18,9 +18,7 @@
 	<!-- start to filtration bar -->
 	<nav class="sub-nav filter">
 		<ul class="sub-nav-links">
-			<li><a href="#">all mosaic</a></li>
-			<li><a href="#">|</a></li>
-			<li><a href="#">one of a kind</a></li>
+				<?php wp_nav_menu( array( 'theme_location' => 'tertiary', 'menu_class' => 'nav-menu' ) ); ?>
 		</ul>
 	</nav>
 	<!-- end to filtration bar -->	
