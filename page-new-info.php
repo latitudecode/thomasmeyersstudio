@@ -72,6 +72,7 @@
 			</div> 
 
 	<h1 style="text-align: left;">partial list of favorites</h1>		
+					<div class="row row-effect"> 
 
 			  		<!-- go get the posts -->
 					<?php 
@@ -84,19 +85,18 @@
 					<?php if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>	
 
 
-			<div class="row row-effect"> 
 			  <div class="col-md-3">  
-			  	<p>
-					<a target="_blank" href="http://www.<?php echo get_post_meta($post->ID, 'smashing_post_classssssss', true); ?>.com">
-						www.<?php echo get_post_meta($post->ID, 'smashing_post_classssssss', true); ?>.com
-					</a>
-				</p>					  	
+				  	<p>
+						<a target="_blank" href="http://www.<?php echo get_post_meta($post->ID, 'smashing_post_classssssss', true); ?>.com">
+							www.<?php echo get_post_meta($post->ID, 'smashing_post_classssssss', true); ?>.com
+						</a>
+					</p>					  	
 				</div>
 		
 				<?php endwhile; endif; wp_reset_query(); ?> 				 			  					  			  				  	
 
 			</div> 
-
+<br />
 		<div class="row row-effect"> 
 			<p>
 			* All galleries carry mosaic work. <br>
@@ -108,6 +108,7 @@
 			as part of the <br>
 			<a target="_blank" href="http://www.monadnockart.org/index.php/art-tour">Monadnock Art Tour</a>.
 			<br>
+			<br />
 			</p>
 		</div>	
 			<!-- end framwork here -->

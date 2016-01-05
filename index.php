@@ -1,16 +1,33 @@
 <?php get_header(); ?>
 
-
 	<!--- start to the slider -->
 
 	<section class="slider">
 			<div id="cbp-fwslider" class="cbp-fwslider">
+
+			<?php 
+			    query_posts(array( 
+			        'post_type' => 'slides',
+			        'showposts' => 40,
+			    ) );  
+			?>
+
+			<?php if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>	
+
 				<ul>
-					<li><img src="<?php bloginfo('template_directory'); ?>/images/slide2.jpg" alt="img02"/></li>
-					<li><img src="<?php bloginfo('template_directory'); ?>/images/slide5.jpg" alt="img01"/></li>
-					<li><img src="<?php bloginfo('template_directory'); ?>/images/slide3.jpg" alt="img03"/></li>
-					<li><img src="<?php bloginfo('template_directory'); ?>/images/slide4.jpg" alt="img04"/></li>
+					<li>
+							<?php 
+							if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+								the_post_thumbnail();
+							} 
+							?>
+
+							<?php $featuredImage = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+					</li>
 				</ul>
+			
+			<?php endwhile; endif; wp_reset_query(); ?>  
+
 			</div>
 	</section>
 

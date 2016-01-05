@@ -113,6 +113,33 @@ function creater_post_typerr() {
   );
 }
 
+/* SLIDES */
+
+add_action( 'init', 'creater_post_type_slides' );
+function creater_post_type_slides() {
+  register_post_type( 'slides',
+    array(
+      'labels' => array(
+        'name' => __( 'Slides' ),
+        'singular_name' => __( 'Slide' )
+      ),
+      'public' => true,
+      'has_archive' => true,      
+      'rewrite' => array('slug' => 'slide'),
+      'supports' => 
+          array(
+            'title',
+            'custom-fields',
+            'category',
+            'author',
+            'thumbnail',
+            'post-formats',
+            'page-attributes'
+    )
+    )
+  );
+}
+
 /*-----------------------------------------------------------------------------------*/
 /* META BOXES */
 /*-----------------------------------------------------------------------------------*/
@@ -745,6 +772,7 @@ function smashing_post_classsssss( $classes ) {
 }
 
 
+
 /* ============================================= */
 /* POST META BOX #1 -- PARTIAL LIST OF FAVORITES */
 /* ============================================= */
@@ -849,6 +877,7 @@ function smashing_post_classssssss( $classes ) {
 
   return $classes;
 }
+
 
 /*-----------------------------------------------------------------------------------*/
 /* Remove Unwanted Admin Menu Items */
