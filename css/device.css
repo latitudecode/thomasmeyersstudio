@@ -116,7 +116,9 @@ li.title {padding: 0px !important;}
 /* list */
 .intro {width: 70%;}
 .sub-nav {top: 100px;position: relative;}
+nav.sub-nav.filter {top: 0px;}
 .category-intro-collage, .category-intro-mosaic {height: 400px !important;}
+.sub-nav {top: 0px;}
 /* detial */
 .product-detail img.attachment-post-thumbnail.wp-post-image {width: 50% !important;}
 li.grid-block, li.previous, li.next {padding: 19px 20px 15px 20px !important;}
@@ -134,12 +136,12 @@ and (orientation : landscape) {
 .logo img { left: 5% !important;}
 /* footer */
 footer {margin-top: 60px !important;}
-
 /* slider */
 /* homepage */
 /* work */
 .product-section .col-md-4 { width: 29% !important;}
 /* list */
+nav.sub-nav.filter {top: 0px;}
 /* detial */
 .main-content.product-detail {top:70px !important;}
 }
@@ -157,6 +159,7 @@ and (orientation : portrait) {
 .product-section {width: 55%!important;}
 /* list */
 .main-columns.category-list img {margin-bottom: 50px !important;}
+nav.sub-nav.filter {top: 0px;}
 /* detial */
 .product-menu {top: 10px !important;}
 .main-content.product-detail {top: 70px !important;}
@@ -179,6 +182,7 @@ and (min-width : 1024px) {
 /* homepage */
 /* work */
 /* list */
+nav.sub-nav.filter {top: 0px;}
 /* detial */
 }
 
@@ -197,7 +201,7 @@ and (max-width : 1024px) {
 .sub-nav {position: relative; top: 100px}
 /* list */
 /* detial */
-img.attachment-post-thumbnail.wp-post-image { width: 260px !important}
+.product-detail-section .attachment-post-thumbnail.wp-post-image { width: 260px !important}
 section.main-content.product-detail { background-color: #474747 !important;}
 }
 
